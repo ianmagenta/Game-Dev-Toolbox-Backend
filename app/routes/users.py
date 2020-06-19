@@ -19,9 +19,16 @@ def handle_auth_error(ex):
 @requires_auth
 def user():
     data = request.json
-    user = User(unique_id=data["sub"], name=data["nickname"],
-                email=data["email"], picture=data["picture"])
-    db.session.add(user)
+    exists = User.query.filter_by(unique_id=data["sub"]).first()
+    if exists:
+        exists.unique_id = data["sub"]
+        exists.name = data["nickname"]
+        exists.email = data["email"]
+        exists.picture = data["picture"]
+    else:
+        user = User(unique_id=data["sub"], name=data["nickname"],
+                    email=data["email"], picture=data["picture"])
+        db.session.add(user)
     db.session.commit()
     return '', 200
 

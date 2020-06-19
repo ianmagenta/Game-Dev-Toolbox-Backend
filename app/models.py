@@ -24,11 +24,26 @@ class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     public = db.Column(db.Boolean, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    name = db.Column(db.String(255), nullable=False)
+    description = db.Column(db.Text, nullable=False)
 
     user = db.relationship('User', back_populates='project')
     favorite_project = db.relationship(
         "FavoriteProject", back_populates="project")
     project_tool = db.relationship('ProjectTool', back_populates='project')
+    project_screenshot = db.relationship(
+        "ProjectScreenshot", back_populates="project")
+
+
+class ProjectScreenshot(db.Model):
+    __tablename__ = "project_screenshots"
+
+    id = db.Column(db.Integer, primary_key=True)
+    project_id = db.Column(db.Integer, db.ForeignKey(
+        'projects.id'), nullable=False)
+    screenshot = db.Column(db.String(255), nullable=False)
+
+    project = db.relationship("Project", back_populates="project_screenshot")
 
 
 class FavoriteProject(db.Model):
