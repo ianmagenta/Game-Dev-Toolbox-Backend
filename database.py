@@ -128,18 +128,84 @@ with app.app_context():
     )
 
     tool10 = Tool(
-        tool_name="GDScript",
-        picture="https://godotengine.org/themes/godotengine/assets/download/godot_logo.svg",
-        website="https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html",
-        description="""GDScript is a high-level, dynamically typed programming language used to create content. It uses a syntax similar to Python (blocks are indent-based and many
-        keywords are similar). Its goal is to be optimized for and tightly integrated with Godot Engine, allowing great flexibility for content creation and integration.""",
-        description_link="https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html",
-        tool_type_id=1,
+        tool_name="CryEngine",
+        picture="https://www.cryengine.com/assets/brand-assets/cryengine-logo-vertical-white.svg",
+        website="https://www.cryengine.com",
+        description="""CryEngine (officially stylized as CRYENGINE) is a game engine designed by the German game developer Crytek. It has been used in all of their titles with
+        the initial version being used in Far Cry, and continues to be updated to support new consoles and hardware for their games. It has also been used for many third-party
+        games under Crytek's licensing scheme, including Sniper: Ghost Warrior 2 and SNOW. Warhorse Studios uses a modified version of the engine for their medieval RPG
+        Kingdom Come: Deliverance. Ubisoft maintains an in-house, heavily modified version of CryEngine from the original Far Cry called the Dunia Engine, which is used in their
+        later iterations of the Far Cry series. According to various anonymous reports in April 2015, CryEngine was licensed to Amazon for $50–70 million. Consequently, in
+        February 2016, Amazon released its own reworked and extended version of CryEngine under the name of Amazon Lumberyard.""",
+        description_link="https://en.wikipedia.org/wiki/CryEngine",
+        tool_type_id=2,
     )
 
+    tool11 = Tool(
+        tool_name="Amazon Lumberyard",
+        picture="https://upload.wikimedia.org/wikipedia/en/f/f2/Lumberyard_Logo.png",
+        website="https://aws.amazon.com/lumberyard/",
+        description="""Amazon Lumberyard is a free cross-platform game engine developed by Amazon and based on CryEngine (init. released 2002), which was licensed from Crytek in 2015.
+        The engine features integration with Amazon Web Services to allow developers to build or host their games on Amazon's servers, as well as support for livestreaming via Twitch.
+        Additionally, the engine includes Twitch ChatPlay, allowing viewers of the Twitch stream to influence the game through the associated chat, a method of play inspired by the Twitch Plays Pokémon phenomenon.
+         The source code is available to end users with limitations: Users may not publicly release the Lumberyard engine source code or use it to release their own game engine. Lumberyard launched on February 9, 2016
+         alongside GameLift, a fee-based managed service for deploying and hosting multiplayer games, intended to allow developers the easy development of games that attract "large and vibrant communities of fans."
+         As of March 2018, the software is currently in beta status and can be used to build games for Microsoft Windows, PlayStation 4, Xbox One, with limited support for iOS and Android and the support of Linux and Mac
+         being planned for future releases. Virtual reality integration was added in Beta 1.3, allowing developers to build games supporting devices like Oculus Rift and HTC Vive.""",
+        description_link="https://en.wikipedia.org/wiki/Amazon_Lumberyard",
+        tool_type_id=2,
+    )
+
+    tool12 = Tool(
+        tool_name="Unreal Engine",
+        picture="https://upload.wikimedia.org/wikipedia/commons/2/20/UE_Logo_Black_Centered.svg",
+        website="https://www.unrealengine.com/en-US/",
+        description="""Unreal Engine is a game engine developed by Epic Games, first showcased in the 1998 first-person shooter game Unreal. Although initially developed
+        for first-person shooters, it has been successfully used in a variety of other genres, including platformers, fighting games, MMORPGs, and other RPGs. Written in C++,
+        the Unreal Engine features a high degree of portability, supporting a wide range of platforms. The latest release is Unreal Engine 4, which launched in 2014 under a
+        subscription model. Since 2015, it can be downloaded for free, with its source code available on GitHub. Epic allows for its use in commercial products based on a royalty
+        model, typically asking developers for 5% of revenues from sales, though with the success of Fortnite, which has become a testbed for Unreal Engine for Epic, Epic waives
+        this fee for developers that publish their games through the Epic Games Store, and more recently for revenues up through the first US$1 million. Epic has announced Unreal
+        Engine 5 to be released by late-2021.""",
+        description_link="https://en.wikipedia.org/wiki/Unreal_Engine",
+        tool_type_id=2,
+    )
+
+    tool13 = Tool(
+        tool_name="Source Engine",
+        picture="https://upload.wikimedia.org/wikipedia/commons/6/67/Source_engine_logo_and_wordmark.svg",
+        website="https://developer.valvesoftware.com/wiki/SDK_Docs",
+        description="""Source is a 3D game engine developed by Valve. It debuted as the successor to GoldSrc with Counter-Strike: Source in June 2004, followed shortly by
+        Half-Life 2 in November, and has been in active development since. Source does not have a concise version numbering scheme; instead, it is designed in constant incremental
+        updates. The successor, Source 2, was officially announced in March 2015, with the first game to use it being Dota 2, which was ported over from Source later that year.""",
+        description_link="https://en.wikipedia.org/wiki/Source_(game_engine)",
+        tool_type_id=2,
+    )
+
+    tool14 = Tool(
+        tool_name="Tiled Map Editor",
+        picture="https://upload.wikimedia.org/wikipedia/commons/6/67/Source_engine_logo_and_wordmark.svg",
+        website="https://www.mapeditor.org/",
+        description="""Tiled is a general purpose tile map editor for all tile-based games, such as RPGs, platformers or Breakout clones. Tiled is highly flexible. It can be used to create maps of any size, with no restrictions on tile size, or the number of layers or tiles that can be used. Maps, layers, tiles, and objects can all be assigned arbitrary properties. Tiled's map format (TMX) is easy to understand and allows multiple tilesets to be used in any map. Tilesets can be modified at any time.""",
+        description_link="https://github.com/bjorn/tiled",
+        tool_type_id=2,
+    )
+
+    # Godot
     association1 = AssociatedTool(primary_tool_id=8, associated_tool_id=2)
-    association2 = AssociatedTool(primary_tool_id=8, associated_tool_id=3)
+    association2 = AssociatedTool(primary_tool_id=8, associated_tool_id=1)
     association3 = AssociatedTool(primary_tool_id=8, associated_tool_id=9)
+    # Cryengine
+    association4 = AssociatedTool(primary_tool_id=10, associated_tool_id=2)
+    association5 = AssociatedTool(primary_tool_id=10, associated_tool_id=6)
+    association6 = AssociatedTool(primary_tool_id=10, associated_tool_id=1)
+    # Lumberyard
+    association7 = AssociatedTool(primary_tool_id=11, associated_tool_id=2)
+    association8 = AssociatedTool(primary_tool_id=11, associated_tool_id=6)
+    # Unreal
+    association9 = AssociatedTool(primary_tool_id=12, associated_tool_id=2)
+    # Source
+    association10 = AssociatedTool(primary_tool_id=13, associated_tool_id=2)
 
     db.session.add(type1)
     db.session.add(type2)
@@ -163,10 +229,20 @@ with app.app_context():
     db.session.add(tool8)
     db.session.add(tool9)
     db.session.add(tool10)
+    db.session.add(tool11)
+    db.session.add(tool12)
+    db.session.add(tool13)
+    db.session.add(tool14)
 
     db.session.add(association1)
     db.session.add(association2)
     db.session.add(association3)
+    db.session.add(association4)
+    db.session.add(association5)
+    db.session.add(association6)
+    db.session.add(association7)
+    db.session.add(association8)
+    db.session.add(association9)
 
     db.session.commit()
     print("Seeding Finished!")
