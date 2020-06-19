@@ -14,10 +14,14 @@ def handle_auth_error(ex):
     return response
 
 
-@bp.route('')
+@bp.route('', methods=['POST'])
 @cross_origin(headers=["Content-Type", "Authorization"])
+@requires_auth
 def user():
-    return "get user"
+    token = request.headers.get('Authorization')
+    print("token: ", token)
+    return token, 201
+
 
 # # This doesn't need authentication
 

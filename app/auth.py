@@ -7,7 +7,7 @@ from flask_migrate import Migrate
 from jose import jwt
 
 AUTH0_DOMAIN = 'game-dev-toolbox.us.auth0.com'
-API_AUDIENCE = 'https://game-dev-toolbox.us.auth0.com/api/v2/'
+API_AUDIENCE = 'gdt_api'
 ALGORITHMS = ["RS256"]
 
 
