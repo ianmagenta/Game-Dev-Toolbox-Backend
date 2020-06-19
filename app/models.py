@@ -7,6 +7,7 @@ class User(db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
+    unique_id = db.Column(db.Integer, unique=True)
     name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), nullable=False)
     picture = db.Column(db.String(255), nullable=False)
