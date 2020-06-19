@@ -7,7 +7,7 @@ class User(db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
-    unique_id = db.Column(db.Integer, unique=True)
+    unique_id = db.Column(db.String(100), nullable=False, unique=True)
     name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), nullable=False)
     picture = db.Column(db.String(255), nullable=False)
@@ -67,8 +67,6 @@ class Tool(db.Model):
     tool_type = db.relationship('ToolType', back_populates='tool')
     tagged_tool = db.relationship('TaggedTool', back_populates='tool')
     project_tool = db.relationship('ProjectTool', back_populates='tool')
-    primary_tool = db.relationship('AssociatedTool', back_populates='ptool')
-    associated_tool = db.relationship('AssociatedTool', back_populates='atool')
 
 
 class TaggedTool(db.Model):
@@ -104,5 +102,7 @@ class AssociatedTool(db.Model):
     associated_tool_id = db.Column(
         db.Integer, db.ForeignKey('tools.id'), nullable=False)
 
-    ptool = db.relationship('Tool', back_populates='primary_tool')
-    atool = db.relationship('Tool', back_populates='associated_tool')
+    ptool = db.relationship('Tool', foreign_keys=[
+                            primary_tool_id])
+    atool = db.relationship('Tool', foreign_keys=[
+                            associated_tool_id])

@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask_cors import cross_origin
 from ..auth import *
-from app.models import db
+from app.models import db, User
 import requests
 
 bp = Blueprint("users", __name__, url_prefix='/users')
@@ -18,9 +18,12 @@ def handle_auth_error(ex):
 @cross_origin(headers=["Content-Type", "Authorization"])
 @requires_auth
 def user():
-    token = request.headers.get('Authorization')
-    print("token: ", token)
-    return token, 201
+    data = request.json
+    user = User(unique_id=data["sub"], name=data["nickname"],
+                email=data["email"], picture=data["picture"])
+    db.session.add(user)
+    db.session.commit()
+    return '', 200
 
 
 # # This doesn't need authentication
