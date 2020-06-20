@@ -271,6 +271,24 @@ with app.app_context():
         tool_type_id=9,
     )
 
+    tool29 = Tool(
+        tool_name="pygame",
+        picture="""https://www.pygame.org/docs/pygame_logo.gif""",
+        website="https://www.pygame.org/",
+        description="""Pygame is a set of Python modules designed for writing video games. Pygame adds functionality on top of the excellent SDL library. This allows you to create fully featured games and multimedia programs in the python language. Pygame is highly portable and runs on nearly every platform and operating system.""",
+        description_link="https://www.pygame.org/wiki/about",
+        tool_type_id=9,
+    )
+
+    tool30 = Tool(
+        tool_name="Heaps",
+        picture="""https://raw.githubusercontent.com/HeapsIO/heaps.io/master/assets/logo/logo-heaps-color.png""",
+        website="https://heaps.io/",
+        description="""Heaps.io is a mature cross platform graphics engine designed for high performance games.It is designed to leverage modern GPUs that are commonly available on both desktop and mobile devices.""",
+        description_link="https://heaps.io/",
+        tool_type_id=9,
+    )
+
     # Godot
     association1 = AssociatedTool(primary_tool_id=8, associated_tool_id=2)
     association2 = AssociatedTool(primary_tool_id=8, associated_tool_id=1)
@@ -312,6 +330,10 @@ with app.app_context():
     association24 = AssociatedTool(primary_tool_id=27, associated_tool_id=2)
     # raylib
     association25 = AssociatedTool(primary_tool_id=28, associated_tool_id=3)
+    # pygame
+    association26 = AssociatedTool(primary_tool_id=29, associated_tool_id=4)
+    # Heaps
+    association27 = AssociatedTool(primary_tool_id=30, associated_tool_id=7)
 
     db.session.add(type1)
     db.session.add(type2)
@@ -353,6 +375,8 @@ with app.app_context():
     db.session.add(tool26)
     db.session.add(tool27)
     db.session.add(tool28)
+    db.session.add(tool29)
+    db.session.add(tool30)
 
     db.session.add(association1)
     db.session.add(association2)
@@ -379,6 +403,8 @@ with app.app_context():
     db.session.add(association23)
     db.session.add(association24)
     db.session.add(association25)
+    db.session.add(association26)
+    db.session.add(association27)
 
     db.session.commit()
     print("Seeding Finished!")
