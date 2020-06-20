@@ -379,6 +379,7 @@ with app.app_context():
     # TIC-80
     association31 = AssociatedTool(primary_tool_id=34, associated_tool_id=6)
     association32 = AssociatedTool(primary_tool_id=34, associated_tool_id=5)
+    association33 = AssociatedTool(primary_tool_id=34, associated_tool_id=3)
 
     db.session.add(type1)
     db.session.add(type2)
@@ -459,6 +460,7 @@ with app.app_context():
     db.session.add(association30)
     db.session.add(association31)
     db.session.add(association32)
+    db.session.add(association33)
 
     db.session.commit()
     print("Seeding Finished!")
