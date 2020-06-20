@@ -312,7 +312,7 @@ with app.app_context():
         picture="""https://upload.wikimedia.org/wikipedia/commons/3/33/PICO-8_logo.png""",
         website="https://www.lexaloffle.com/pico-8.php",
         description="""PICO-8 is a fantasy console for making, sharing and playing tiny games and other computer programs. It feels like a regular console, but runs on Windows / Mac / Linux. When you turn it on, the machine greets you with a commandline, a suite of cartridge creation tools, and an online cartridge browser called SPLORE.""",
-        description_link="https://tic.computer/",
+        description_link="https://www.lexaloffle.com/pico-8.php",
         tool_type_id=11,
     )
 
@@ -321,7 +321,7 @@ with app.app_context():
         picture="""https://tic.computer/img/logo64.png""",
         website="https://tic.computer/",
         description=""" TIC-80 is a fantasy computer for making, playing and sharing tiny games. There are built-in tools for development: code, sprites, maps, sound editors and the command line, which is enough to create a mini retro game. At the exit you will get a cartridge file, which can be stored and played on the website. Also, the game can be packed into a player that works on all popular platforms and distribute as you wish. To make a retro styled game the whole process of creation takes place under some technical limitations: 240x136 pixels display, 16 color palette, 256 8x8 color sprites, 4 channel sound and etc.""",
-        description_link="https://www.lexaloffle.com/pico-8.php",
+        description_link="https://tic.computer/",
         tool_type_id=11,
     )
 
