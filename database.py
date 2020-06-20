@@ -312,7 +312,7 @@ with app.app_context():
         picture="""https://upload.wikimedia.org/wikipedia/commons/3/33/PICO-8_logo.png""",
         website="https://www.lexaloffle.com/pico-8.php",
         description="""PICO-8 is a fantasy console for making, sharing and playing tiny games and other computer programs. It feels like a regular console, but runs on Windows / Mac / Linux. When you turn it on, the machine greets you with a commandline, a suite of cartridge creation tools, and an online cartridge browser called SPLORE.""",
-        description_link="https://www.lexaloffle.com/pico-8.php",
+        description_link="https://tic.computer/",
         tool_type_id=11,
     )
 
