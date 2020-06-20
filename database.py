@@ -289,6 +289,42 @@ with app.app_context():
         tool_type_id=9,
     )
 
+    tool31 = Tool(
+        tool_name="SDL",
+        picture="""https://www.libsdl.org/media/SDL_logo.png""",
+        website="https://www.libsdl.org/download-2.0.php",
+        description="""Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games including Valve's award winning catalog and many Humble Bundle games. SDL officially supports Windows, Mac OS X, Linux, iOS, and Android. Support for other platforms may be found in the source code. SDL is written in C, works natively with C++, and there are bindings available for several other languages, including C# and Python.""",
+        description_link="https://www.libsdl.org/index.php",
+        tool_type_id=10,
+    )
+
+    tool32 = Tool(
+        tool_name="OpenGL",
+        picture="""https://www.opengl.org/img/opengl_logo.jpg""",
+        website="https://www.opengl.org/",
+        description="""OpenGL is the premier environment for developing portable, interactive 2D and 3D graphics applications. Since its introduction in 1992, OpenGL has become the industry's most widely used and supported 2D and 3D graphics application programming interface (API), bringing thousands of applications to a wide variety of computer platforms. OpenGL fosters innovation and speeds application development by incorporating a broad set of rendering, texture mapping, special effects, and other powerful visualization functions. Developers can leverage the power of OpenGL across all popular desktop and workstation platforms, ensuring wide application deployment.""",
+        description_link="https://www.opengl.org/about/",
+        tool_type_id=10,
+    )
+
+    tool33 = Tool(
+        tool_name="PICO-8",
+        picture="""https://upload.wikimedia.org/wikipedia/commons/3/33/PICO-8_logo.png""",
+        website="https://www.lexaloffle.com/pico-8.php",
+        description="""PICO-8 is a fantasy console for making, sharing and playing tiny games and other computer programs. It feels like a regular console, but runs on Windows / Mac / Linux. When you turn it on, the machine greets you with a commandline, a suite of cartridge creation tools, and an online cartridge browser called SPLORE.""",
+        description_link="https://www.lexaloffle.com/pico-8.php",
+        tool_type_id=11,
+    )
+
+    tool34 = Tool(
+        tool_name="TIC-80",
+        picture="""https://tic.computer/img/logo64.png""",
+        website="https://tic.computer/",
+        description=""" TIC-80 is a fantasy computer for making, playing and sharing tiny games. There are built-in tools for development: code, sprites, maps, sound editors and the command line, which is enough to create a mini retro game. At the exit you will get a cartridge file, which can be stored and played on the website. Also, the game can be packed into a player that works on all popular platforms and distribute as you wish. To make a retro styled game the whole process of creation takes place under some technical limitations: 240x136 pixels display, 16 color palette, 256 8x8 color sprites, 4 channel sound and etc.""",
+        description_link="https://www.lexaloffle.com/pico-8.php",
+        tool_type_id=11,
+    )
+
     # Godot
     association1 = AssociatedTool(primary_tool_id=8, associated_tool_id=2)
     association2 = AssociatedTool(primary_tool_id=8, associated_tool_id=1)
@@ -334,6 +370,15 @@ with app.app_context():
     association26 = AssociatedTool(primary_tool_id=29, associated_tool_id=4)
     # Heaps
     association27 = AssociatedTool(primary_tool_id=30, associated_tool_id=7)
+    # SDL
+    association28 = AssociatedTool(primary_tool_id=31, associated_tool_id=3)
+    # OpenGL
+    association29 = AssociatedTool(primary_tool_id=32, associated_tool_id=3)
+    # Pico-8
+    association30 = AssociatedTool(primary_tool_id=33, associated_tool_id=6)
+    # TIC-80
+    association31 = AssociatedTool(primary_tool_id=34, associated_tool_id=6)
+    association32 = AssociatedTool(primary_tool_id=34, associated_tool_id=5)
 
     db.session.add(type1)
     db.session.add(type2)
@@ -377,6 +422,10 @@ with app.app_context():
     db.session.add(tool28)
     db.session.add(tool29)
     db.session.add(tool30)
+    db.session.add(tool31)
+    db.session.add(tool32)
+    db.session.add(tool33)
+    db.session.add(tool34)
 
     db.session.add(association1)
     db.session.add(association2)
@@ -405,6 +454,11 @@ with app.app_context():
     db.session.add(association25)
     db.session.add(association26)
     db.session.add(association27)
+    db.session.add(association28)
+    db.session.add(association29)
+    db.session.add(association30)
+    db.session.add(association31)
+    db.session.add(association32)
 
     db.session.commit()
     print("Seeding Finished!")
