@@ -184,11 +184,11 @@ with app.app_context():
 
     tool14 = Tool(
         tool_name="Tiled Map Editor",
-        picture="https://upload.wikimedia.org/wikipedia/commons/6/67/Source_engine_logo_and_wordmark.svg",
+        picture="https://www.mapeditor.org/img/tiled-logo-white.png",
         website="https://www.mapeditor.org/",
         description="""Tiled is a general purpose tile map editor for all tile-based games, such as RPGs, platformers or Breakout clones. Tiled is highly flexible. It can be used to create maps of any size, with no restrictions on tile size, or the number of layers or tiles that can be used. Maps, layers, tiles, and objects can all be assigned arbitrary properties. Tiled's map format (TMX) is easy to understand and allows multiple tilesets to be used in any map. Tilesets can be modified at any time.""",
         description_link="https://github.com/bjorn/tiled",
-        tool_type_id=2,
+        tool_type_id=3,
     )
 
     # Godot
