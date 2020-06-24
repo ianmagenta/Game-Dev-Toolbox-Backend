@@ -66,6 +66,9 @@ class ToolType(db.Model):
 
     tool = db.relationship('Tool', back_populates='tool_type')
 
+    def to_dict(self):
+        return dict(id=self.id, tool_type=self.tool_type)
+
 
 class Tool(db.Model):
     __tablename__ = "tools"
@@ -82,6 +85,10 @@ class Tool(db.Model):
     tool_type = db.relationship('ToolType', back_populates='tool')
     tagged_tool = db.relationship('TaggedTool', back_populates='tool')
     project_tool = db.relationship('ProjectTool', back_populates='tool')
+
+    def to_dict(self):
+        return dict(id=self.id, tool_name=self.tool_name, picture=self.picture,
+                    website=self.website, description=self.description, description_link=self.description_link, tool_type=self.tool_type.to_dict())
 
 
 class TaggedTool(db.Model):
@@ -121,3 +128,6 @@ class AssociatedTool(db.Model):
                             primary_tool_id])
     atool = db.relationship('Tool', foreign_keys=[
                             associated_tool_id])
+
+    def to_dict(self):
+        return dict(id=self.id, primary_tool_id=self.ptool.to_dict(), associated_tool_id=self.atool.to_dict())

@@ -61,7 +61,7 @@ with app.app_context():
         tool_name="JavaScript",
         picture="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
         website="https://www.javascript.com/",
-        description="""JavaScript often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions. Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web. JavaScript enables interactive web pages and is an essential part of web applications. The vast majority of websites use it for client-side page behavior, and all major web browsers have a dedicated JavaScript engine to execute it.""",
+        description="""JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions. Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web. JavaScript enables interactive web pages and is an essential part of web applications. The vast majority of websites use it for client-side page behavior, and all major web browsers have a dedicated JavaScript engine to execute it.""",
         description_link="https://en.wikipedia.org/wiki/JavaScript",
         tool_type_id=1,
     )
@@ -122,7 +122,7 @@ with app.app_context():
 
     tool12 = Tool(
         tool_name="Unreal Engine",
-        picture="https://upload.wikimedia.org/wikipedia/commons/2/20/UE_Logo_Black_Centered.svg",
+        picture="https://cdn2.unrealengine.com/Unreal+Engine%2Flogos%2FUnreal_Engine_White-1125x1280-0ac2243552326055d20928902aa57370acacd000.png",
         website="https://www.unrealengine.com/en-US/",
         description="""Unreal Engine is a game engine developed by Epic Games, first showcased in the 1998 first-person shooter game Unreal. Although initially developed for first-person shooters, it has been successfully used in a variety of other genres, including platformers, fighting games, MMORPGs, and other RPGs. Written in C++, the Unreal Engine features a high degree of portability, supporting a wide range of platforms. The latest release is Unreal Engine 4, which launched in 2014 under a subscription model. Since 2015, it can be downloaded for free, with its source code available on GitHub. Epic allows for its use in commercial products based on a royalty model, typically asking developers for 5% of revenues from sales, though with the success of Fortnite, which has become a testbed for Unreal Engine for Epic, Epic waives this fee for developers that publish their games through the Epic Games Store, and more recently for revenues up through the first US$1 million. Epic has announced Unreal Engine 5 to be released by late-2021.""",
         description_link="https://en.wikipedia.org/wiki/Unreal_Engine",
