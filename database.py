@@ -194,7 +194,6 @@ with app.app_context():
 
     tool20 = Tool(
         tool_name="SHADERed",
-        picture="https://shadered.org/img/icon.png",
         website="https://shadered.org/",
         description="""SHADERed is a lightweight tool for creating and testing HLSL and GLSL shaders. It is easy to use, open source, cross-platform (runs on Windows & Linux - HLSL shaders work on both OSes) and -frequently updated with new features.""",
         description_link="https://github.com/dfranx/SHADERed",

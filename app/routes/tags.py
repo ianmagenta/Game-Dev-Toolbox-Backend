@@ -1,10 +1,10 @@
 from flask import Blueprint, jsonify
 from flask_cors import cross_origin
 from ..auth import *
-from app.models import db, Tool, AssociatedTool
+from app.models import db, TaggedTool, User
 import requests
 
-bp = Blueprint("tools", __name__, url_prefix='/tools')
+bp = Blueprint("tags", __name__, url_prefix='/tags')
 
 
 @bp.errorhandler(AuthError)
@@ -14,24 +14,21 @@ def handle_auth_error(ex):
     return response
 
 
-@bp.route('/<tool_id>')
+@bp.route('', methods=['POST'])
 @cross_origin(headers=["Content-Type", "Authorization"])
-def tool_post(tool_id):
-    tool = Tool.query.get(tool_id)
-    if tool:
-        tool_dict = tool.to_dict()
-        tool_dict["associated"] = []
-        tool_dict["back_associated"] = []
-        associated = AssociatedTool.query.filter_by(primary_tool_id=tool_id)
-        for i in associated:
-            tool_dict["associated"].append(i.primary_to_dict())
-        back_associated = AssociatedTool.query.filter_by(
-            associated_tool_id=tool_id)
-        for j in back_associated:
-            tool_dict["back_associated"].append(j.associated_to_dict())
-        return tool_dict, 200
+@requires_auth
+def tag_post():
+    data = request.json
+    user = User.query.filter(User.unique_id == data["id"]).one()
+    exists = TaggedTool.query.filter_by(
+        user_id=user.id, tool_id=data["tool"]).first()
+    if exists:
+        db.session.delete(exists)
     else:
-        return {}, 200
+        newTag = TaggedTool(user_id=user.id, tool_id=int(data["tool"]))
+        db.session.add(newTag)
+    db.session.commit()
+    return "", 200
 
 
 # # This doesn't need authentication

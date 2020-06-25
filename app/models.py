@@ -88,7 +88,8 @@ class Tool(db.Model):
 
     def to_dict(self):
         return dict(id=self.id, tool_name=self.tool_name, picture=self.picture,
-                    website=self.website, description=self.description, description_link=self.description_link, tool_type=self.tool_type.to_dict())
+                    website=self.website, description=self.description,
+                    description_link=self.description_link, tool_type=self.tool_type.to_dict())
 
 
 class TaggedTool(db.Model):
@@ -129,5 +130,8 @@ class AssociatedTool(db.Model):
     atool = db.relationship('Tool', foreign_keys=[
                             associated_tool_id])
 
-    def to_dict(self):
-        return dict(id=self.id, primary_tool_id=self.ptool.to_dict(), associated_tool_id=self.atool.to_dict())
+    def primary_to_dict(self):
+        return dict(id=self.id, associated_tool_id=self.atool.to_dict())
+
+    def associated_to_dict(self):
+        return dict(id=self.id, primary_tool_id=self.ptool.to_dict())

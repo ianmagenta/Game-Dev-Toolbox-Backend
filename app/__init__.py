@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify, _request_ctx_stack
 from flask_cors import cross_origin, CORS
 from flask_migrate import Migrate
 from .models import db
-from .routes import users, tools
+from .routes import users, tools, tags
 from .auth import *
 
 from .config import Config
@@ -24,6 +24,7 @@ def create_app(config_class=Config):
 
     app.register_blueprint(users.bp)
     app.register_blueprint(tools.bp)
+    app.register_blueprint(tags.bp)
     db.init_app(app)
     Migrate(app, db)
 
