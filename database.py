@@ -237,7 +237,7 @@ with app.app_context():
 
     tool25 = Tool(
         tool_name="FamiStudio",
-        picture="""https://img.itch.zone/aW1nLzI1OTgxMTYucG5n/original/sAaQvD.png""",
+        picture="""https://famistudio.org/famistudio.png""",
         website="https://famistudio.org/",
         description="""FamiStudio is a very simple, DAW-style, music editor for the Nintendo Entertainment System. It is designed for both chiptune enthusiasts and the NES homebrew community.""",
         description_link="https://bleubleu.itch.io/famistudio",

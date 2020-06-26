@@ -14,6 +14,20 @@ def handle_auth_error(ex):
     return response
 
 
+@bp.route('is_tagged', methods=["POST"])
+@cross_origin(headers=["Content-Type", "Authorization"])
+@requires_auth
+def get_tag():
+    data = request.json
+    user = User.query.filter_by(unique_id=data["id"]).one()
+    tag = TaggedTool.query.filter_by(
+        user_id=user.id, tool_id=data["tool"]).first()
+    if tag:
+        return {"tagged": True}, 200
+    else:
+        return {"tagged": False}, 200
+
+
 @bp.route('', methods=['POST'])
 @cross_origin(headers=["Content-Type", "Authorization"])
 @requires_auth
@@ -24,11 +38,13 @@ def tag_post():
         user_id=user.id, tool_id=data["tool"]).first()
     if exists:
         db.session.delete(exists)
+        db.session.commit()
+        return {"tagged": False}, 200
     else:
         newTag = TaggedTool(user_id=user.id, tool_id=int(data["tool"]))
         db.session.add(newTag)
-    db.session.commit()
-    return "", 200
+        db.session.commit()
+        return {"tagged": True}, 200
 
 
 # # This doesn't need authentication
