@@ -11,6 +11,7 @@ bp = Blueprint("tags", __name__, url_prefix='/tags')
 def handle_auth_error(ex):
     response = jsonify(ex.error)
     response.status_code = ex.status_code
+    print(response)
     return response
 
 
