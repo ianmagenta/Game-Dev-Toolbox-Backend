@@ -20,7 +20,7 @@ def handle_auth_error(ex):
 def get_user_tags(u_id):
     user = User.query.filter_by(unique_id=u_id).one()
     tags = TaggedTool.query.filter_by(
-        user_id=user.id)
+        user_id=user.id).order_by(TaggedTool.id)
     export = {i: v.to_dict() for i, v in enumerate(tags)}
     return export, 200
 
