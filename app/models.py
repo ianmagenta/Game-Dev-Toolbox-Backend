@@ -15,7 +15,8 @@ class User(db.Model):
     project = db.relationship("Project", back_populates="user")
     favorite_project = db.relationship(
         "FavoriteProject", back_populates="user")
-    tagged_tool = db.relationship('TaggedTool', back_populates='user')
+    tagged_tool = db.relationship(
+        'TaggedTool', back_populates='user', uselist=False)
 
 
 class Project(db.Model):
@@ -102,6 +103,9 @@ class TaggedTool(db.Model):
 
     user = db.relationship('User', back_populates='tagged_tool')
     tool = db.relationship('Tool', back_populates='tagged_tool')
+
+    def to_dict(self):
+        return dict(id=self.id, user_id=self.user_id, tool_id=self.tool_id, tool=self.tool.to_dict())
 
 
 class ProjectTool(db.Model):

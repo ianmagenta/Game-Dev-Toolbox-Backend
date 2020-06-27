@@ -11,8 +11,18 @@ bp = Blueprint("tags", __name__, url_prefix='/tags')
 def handle_auth_error(ex):
     response = jsonify(ex.error)
     response.status_code = ex.status_code
-    print(response)
     return response
+
+
+@bp.route('user/<u_id>')
+@cross_origin(headers=["Content-Type", "Authorization"])
+@requires_auth
+def get_user_tags(u_id):
+    user = User.query.filter_by(unique_id=u_id).one()
+    tags = TaggedTool.query.filter_by(
+        user_id=user.id)
+    export = {i: v.to_dict() for i, v in enumerate(tags)}
+    return export, 200
 
 
 @bp.route('is_tagged', methods=["POST"])
