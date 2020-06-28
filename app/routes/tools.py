@@ -14,6 +14,14 @@ def handle_auth_error(ex):
     return response
 
 
+@bp.route('')
+@cross_origin(headers=["Content-Type", "Authorization"])
+def tool_get():
+    tools = Tool.query.all()
+    tools_dict = {i: v.to_dict() for i, v in enumerate(tools)}
+    return tools_dict, 200
+
+
 @bp.route('/<tool_id>')
 @cross_origin(headers=["Content-Type", "Authorization"])
 def tool_post(tool_id):

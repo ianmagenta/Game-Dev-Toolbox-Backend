@@ -50,7 +50,7 @@ with app.app_context():
 
     tool4 = Tool(
         tool_name="Python",
-        picture="https://www.python.org/static/community_logos/python-logo-generic.svg",
+        picture="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
         website="https://www.python.org/",
         description="""Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.""",
         description_link="https://en.wikipedia.org/wiki/Python_(programming_language)",
@@ -319,9 +319,45 @@ with app.app_context():
         tool_name="TIC-80",
         picture="""https://tic.computer/img/logo64.png""",
         website="https://tic.computer/",
-        description=""" TIC-80 is a fantasy computer for making, playing and sharing tiny games. There are built-in tools for development: code, sprites, maps, sound editors and the command line, which is enough to create a mini retro game. At the exit you will get a cartridge file, which can be stored and played on the website. Also, the game can be packed into a player that works on all popular platforms and distribute as you wish. To make a retro styled game the whole process of creation takes place under some technical limitations: 240x136 pixels display, 16 color palette, 256 8x8 color sprites, 4 channel sound and etc.""",
+        description="""TIC-80 is a fantasy computer for making, playing and sharing tiny games. There are built-in tools for development: code, sprites, maps, sound editors and the command line, which is enough to create a mini retro game. At the exit you will get a cartridge file, which can be stored and played on the website. Also, the game can be packed into a player that works on all popular platforms and distribute as you wish. To make a retro styled game the whole process of creation takes place under some technical limitations: 240x136 pixels display, 16 color palette, 256 8x8 color sprites, 4 channel sound and etc.""",
         description_link="https://tic.computer/",
         tool_type_id=11,
+    )
+
+    tool35 = Tool(
+        tool_name="Unity",
+        picture="""/images/unity-masterbrand-white.png""",
+        website="https://unity.com/",
+        description="""Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine. As of 2018, the engine had been extended to support more than 25 platforms. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences. The engine has been adopted by industries outside video gaming, such as film, automotive, architecture, engineering and construction.""",
+        description_link="https://en.wikipedia.org/wiki/Unity_(game_engine)",
+        tool_type_id=2,
+    )
+
+    tool36 = Tool(
+        tool_name="GameMaker",
+        picture="""https://coal.yoyogames.com/brand/GMS2_PrimaryLogo/Primary1/GMS2_Primary_DblLine_BlackTransparent.png""",
+        website="https://www.yoyogames.com/gamemaker",
+        description="""GameMaker (originally Animo and later Game Maker until 2011) is a series of cross-platform game engines created by Mark Overmars in 1999 and developed by YoYo Games since 2007. The latest iteration is GameMaker Studio 2, first released in 2017. GameMaker accommodates the creation of cross-platform and multi-genre video games using a custom drag-and-drop visual programming language or a scripting language known as Game Maker Language, which can be used to develop more advanced games that could not be created just by using the drag and drop features. GameMaker was originally designed to allow novice computer programmers to be able to make computer games without much programming knowledge by use of these actions. Recent versions of software also focus on appealing to advanced developers.""",
+        description_link="https://en.wikipedia.org/wiki/GameMaker",
+        tool_type_id=2,
+    )
+
+    tool37 = Tool(
+        tool_name="GameMaker Language",
+        picture="""https://coal.yoyogames.com/brand/GMS2_PrimaryLogo/Primary1/GMS2_Primary_DblLine_BlackTransparent.png""",
+        website="https://docs2.yoyogames.com/source/_build/3_scripting/3_gml_overview/index.html",
+        description="""GameMaker Language is GameMaker's scripting language. It is an imperative, dynamically typed language commonly likened to JavaScript and C-like languages. The language's default mode of operation on native platforms is via a stack machine; it can also be source-to-source compiled to C++ via LLVM for higher performance. On HTML5, GML is source-to-source compiled to JavaScript with optimizations and minification applied in non-debug builds.""",
+        description_link="https://en.wikipedia.org/wiki/GameMaker#GameMaker_Language",
+        tool_type_id=1,
+    )
+
+    tool38 = Tool(
+        tool_name="Phaser",
+        picture="""https://phaser.io/images/img.png""",
+        website="https://phaser.io/",
+        description="""Phaser is a free software 2D game framework for making HTML5 games for desktop and mobile. It is developed by Photon Storm. Phaser uses both a Canvas and WebGL renderer internally and can automatically swap between them based on browser support. This allows for fast rendering across desktop and mobile. It uses the Pixi.js library for rendering. Games can be compiled to iOS, Android and native desktop apps via 3rd party tools like Apache Cordova and phonegap. Whilst you can wrap your game into a native app using tools such as Cordova and Phonegap the game itself is never compiled. The 'game' is simply run as JavaScript in a bundled browser. This means performance is nothing like a native compiled app.""",
+        description_link="https://en.wikipedia.org/wiki/Phaser_(game_framework)",
+        tool_type_id=9,
     )
 
     # Godot
@@ -379,6 +415,14 @@ with app.app_context():
     association31 = AssociatedTool(primary_tool_id=34, associated_tool_id=6)
     association32 = AssociatedTool(primary_tool_id=34, associated_tool_id=5)
     association33 = AssociatedTool(primary_tool_id=34, associated_tool_id=3)
+    # Unity
+    association34 = AssociatedTool(primary_tool_id=35, associated_tool_id=1)
+    association35 = AssociatedTool(primary_tool_id=35, associated_tool_id=2)
+    # GameMaker
+    association36 = AssociatedTool(primary_tool_id=36, associated_tool_id=2)
+    association37 = AssociatedTool(primary_tool_id=36, associated_tool_id=37)
+    # Phaser
+    association38 = AssociatedTool(primary_tool_id=38, associated_tool_id=5)
 
     db.session.add(type1)
     db.session.add(type2)
@@ -426,6 +470,10 @@ with app.app_context():
     db.session.add(tool32)
     db.session.add(tool33)
     db.session.add(tool34)
+    db.session.add(tool35)
+    db.session.add(tool36)
+    db.session.add(tool37)
+    db.session.add(tool38)
 
     db.session.add(association1)
     db.session.add(association2)
@@ -460,6 +508,11 @@ with app.app_context():
     db.session.add(association31)
     db.session.add(association32)
     db.session.add(association33)
+    db.session.add(association34)
+    db.session.add(association35)
+    db.session.add(association36)
+    db.session.add(association37)
+    db.session.add(association38)
 
     db.session.commit()
     print("Seeding Finished!")

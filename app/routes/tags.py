@@ -18,11 +18,14 @@ def handle_auth_error(ex):
 @cross_origin(headers=["Content-Type", "Authorization"])
 @requires_auth
 def get_user_tags(u_id):
-    user = User.query.filter_by(unique_id=u_id).one()
-    tags = TaggedTool.query.filter_by(
-        user_id=user.id).order_by(TaggedTool.id)
-    export = {i: v.to_dict() for i, v in enumerate(tags)}
-    return export, 200
+    user = User.query.filter_by(unique_id=u_id).first()
+    if user:
+        tags = TaggedTool.query.filter_by(
+            user_id=user.id).order_by(TaggedTool.id)
+        export = {i: v.to_dict() for i, v in enumerate(tags)}
+        return export, 200
+    else:
+        return {}, 200
 
 
 @bp.route('is_tagged', methods=["POST"])
@@ -30,11 +33,14 @@ def get_user_tags(u_id):
 @requires_auth
 def get_tag():
     data = request.json
-    user = User.query.filter_by(unique_id=data["id"]).one()
-    tag = TaggedTool.query.filter_by(
-        user_id=user.id, tool_id=data["tool"]).first()
-    if tag:
-        return {"tagged": True}, 200
+    user = User.query.filter_by(unique_id=data["id"]).first()
+    if user:
+        tag = TaggedTool.query.filter_by(
+            user_id=user.id, tool_id=data["tool"]).first()
+        if tag:
+            return {"tagged": True}, 200
+        else:
+            return {"tagged": False}, 200
     else:
         return {"tagged": False}, 200
 
