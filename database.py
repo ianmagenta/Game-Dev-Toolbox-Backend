@@ -335,7 +335,7 @@ with app.app_context():
 
     tool36 = Tool(
         tool_name="GameMaker",
-        picture="""https://coal.yoyogames.com/brand/GMS2_PrimaryLogo/Primary1/GMS2_Primary_DblLine_BlackTransparent.png""",
+        picture="""https://coal.yoyogames.com/brand/GMS2_PrimaryLogo/Primary1/GMS2_Primary_DblLine_WhiteTransparent.png""",
         website="https://www.yoyogames.com/gamemaker",
         description="""GameMaker (originally Animo and later Game Maker until 2011) is a series of cross-platform game engines created by Mark Overmars in 1999 and developed by YoYo Games since 2007. The latest iteration is GameMaker Studio 2, first released in 2017. GameMaker accommodates the creation of cross-platform and multi-genre video games using a custom drag-and-drop visual programming language or a scripting language known as Game Maker Language, which can be used to develop more advanced games that could not be created just by using the drag and drop features. GameMaker was originally designed to allow novice computer programmers to be able to make computer games without much programming knowledge by use of these actions. Recent versions of software also focus on appealing to advanced developers.""",
         description_link="https://en.wikipedia.org/wiki/GameMaker",
@@ -344,7 +344,7 @@ with app.app_context():
 
     tool37 = Tool(
         tool_name="GameMaker Language",
-        picture="""https://coal.yoyogames.com/brand/GMS2_PrimaryLogo/Primary1/GMS2_Primary_DblLine_BlackTransparent.png""",
+        picture="""https://coal.yoyogames.com/brand/GMS2_PrimaryLogo/Primary1/GMS2_Primary_DblLine_WhiteTransparent.png""",
         website="https://docs2.yoyogames.com/source/_build/3_scripting/3_gml_overview/index.html",
         description="""GameMaker Language is GameMaker's scripting language. It is an imperative, dynamically typed language commonly likened to JavaScript and C-like languages. The language's default mode of operation on native platforms is via a stack machine; it can also be source-to-source compiled to C++ via LLVM for higher performance. On HTML5, GML is source-to-source compiled to JavaScript with optimizations and minification applied in non-debug builds.""",
         description_link="https://en.wikipedia.org/wiki/GameMaker#GameMaker_Language",
